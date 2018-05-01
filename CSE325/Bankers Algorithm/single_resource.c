@@ -24,7 +24,7 @@ int main() {
 
     // Initially, no processes has been finished. \
     Hence, set them all to zero.
-    memset(allocation, 0, p * sizeof(int));
+    memset(flag, 0, p * sizeof(int));
 
     printf("Enter the number of instances of the resource: ");
     scanf("%d", &available);
