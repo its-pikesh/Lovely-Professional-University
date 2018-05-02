@@ -11,8 +11,13 @@ int main()
 	int fd,n,size=0;
 	char buff[100],sizebuff[100 ];
 	fd=open("file2.txt",O_RDONLY);
-  //calculate size
-	while ((n=read(fd, sizebuff, sizeof(sizebuff))) != 0)
+	if(fd == -1)
+	{
+		printf("Error opening file2.txt.");
+		exit(EXIT_FAILURE);
+	}
+	//calculate size
+	while ((n=read(fd, sizebuff, sizeof(sizebuff))) > 0)
 	{
 		size += n;
 	}
