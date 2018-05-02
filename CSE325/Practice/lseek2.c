@@ -21,7 +21,8 @@ int main()
 	{
 		size += n;
 	}
-	lseek(fd,-10,SEEK_END);
+	//icha anusaar -11 ya -10 use kro
+	lseek(fd,-11,SEEK_END);
 	n=read(fd,buff,10);
 	close(fd);
 	fd=open("file1.txt",O_CREAT|O_TRUNC|O_WRONLY, 0777);
@@ -29,5 +30,5 @@ int main()
 	close(fd);
 	printf("Data written to file1.txt\n");
 	printf("Size of file2.txt: %d bytes\n",size);
-  printf("Last 10 characters of file2.txt: %s\n",buff);
+	printf("Last 10 characters of file2.txt: %s\n",buff);
 }
