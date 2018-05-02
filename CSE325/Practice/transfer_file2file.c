@@ -27,11 +27,11 @@ int main() {
     }
 
     while ((n = read(fd1, buff, sizeof(buff))) != 0) {
-		write(fd2, buff, n);
-	}
+        write(fd2, buff, n);
+    }
 
     close(fd1);
-	close(fd2);
+    close(fd2);
 
     printf("Data successfully copied from %s to %s.\n",file1, file2);
     exit(EXIT_SUCCESS);
