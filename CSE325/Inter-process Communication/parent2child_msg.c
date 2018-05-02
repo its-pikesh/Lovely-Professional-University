@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 
@@ -33,7 +34,7 @@ int main() {
 
         close(fd[0]); // Close the read end.
         char message[] = "Hello, child!";
-        write(fd[1], message, sizeof(message));
+        write(fd[1], message, strlen(message));
 
         wait(NULL); // Wait for the child to finish its execution.
         printf("\n");
